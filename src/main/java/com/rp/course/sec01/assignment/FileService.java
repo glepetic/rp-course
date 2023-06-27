@@ -14,7 +14,7 @@ public class FileService {
         this.fileUtil = fileUtil;
     }
 
-    public static FileService getInstance() {
+    public static FileService instance() {
         return instance = Objects.isNull(instance) ? new FileService(FileUtil.getInstance()) : instance;
     }
 

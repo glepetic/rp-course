@@ -4,7 +4,7 @@ import com.rp.util.Util;
 
 public class FileDemo {
 
-    private static final FileService fileService = FileService.getInstance();
+    private static final FileService fileService = FileService.instance();
 
     public static void main(String[] args) {
 

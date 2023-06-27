@@ -1,12 +1,10 @@
 package com.rp.course.sec02.assignment;
 
-import lombok.SneakyThrows;
-
 import java.util.concurrent.CountDownLatch;
 
 public class StockPriceDemo {
 
-    private final static StockPriceService stockPriceService = StockPriceService.getInstance();
+    private final static StockPriceService stockPriceService = StockPriceService.instance();
 
     public static void main(String[] args) throws InterruptedException {
 

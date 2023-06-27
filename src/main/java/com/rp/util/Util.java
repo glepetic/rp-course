@@ -1,6 +1,7 @@
 package com.rp.util;
 
 import com.github.javafaker.Faker;
+import org.reactivestreams.Subscriber;
 
 import java.util.function.Consumer;
 
@@ -30,6 +31,10 @@ public class Util {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static <T> Subscriber<T> subscriber() {
+        return new DefaultSubscriber<>();
     }
 
 }

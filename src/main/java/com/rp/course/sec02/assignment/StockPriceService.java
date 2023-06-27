@@ -17,7 +17,7 @@ public class StockPriceService {
         stockPrice = 100;
     }
 
-    public static StockPriceService getInstance() {
+    public static StockPriceService instance() {
         return instance = Objects.isNull(instance) ? new StockPriceService() : instance;
     }
 
