@@ -15,7 +15,7 @@ public class Lec05FluxGenerate {
                     // wont work because you can emit maximum 1 item with synchronousSink
                     synchronousSink.next(Util.faker().country().name());
                 })
-                .subscribe(Util.subscriber());
+                .subscribe(Util.subscriber("Misuse"));
 
         // Equivalent of Lec04FluxCreateIssueFix
         Flux.generate(synchronousSink -> {
@@ -23,8 +23,8 @@ public class Lec05FluxGenerate {
                     System.out.println("Emitting: " + country);
                     synchronousSink.next(country);
                 })
-                .take(3)
-                .subscribe(Util.subscriber());
+                .take(3) // canceled by subscriber
+                .subscribe(Util.subscriber("Infinite"));
 
         // Stops when Canada is emitted, after 10 iterations or after subscriber cancels
         // (not ideal to use outside of scope variable, see Lec07)
@@ -36,7 +36,7 @@ public class Lec05FluxGenerate {
                     if (country.equalsIgnoreCase("Canada") || counter.incrementAndGet() >= 10) synchronousSink.complete();
                 })
                 .take(3)
-                .subscribe(Util.subscriber());
+                .subscribe(Util.subscriber("Until"));
 
         // Only emits 1 because of complete()
         Flux.generate(synchronousSink -> {
@@ -46,7 +46,7 @@ public class Lec05FluxGenerate {
                     synchronousSink.complete();
                 })
                 .take(3)
-                .subscribe(Util.subscriber());
+                .subscribe(Util.subscriber("Single"));
 
         // Only emits 1 because of error()
         Flux.generate(synchronousSink -> {
@@ -56,7 +56,7 @@ public class Lec05FluxGenerate {
                     synchronousSink.error(new RuntimeException("oops"));
                 })
                 .take(3)
-                .subscribe(Util.subscriber());
+                .subscribe(Util.subscriber("SingleThenError"));
 
     }
 

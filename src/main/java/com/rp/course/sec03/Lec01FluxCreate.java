@@ -13,7 +13,7 @@ public class Lec01FluxCreate {
                         .next(2)
                         .complete()
                 )
-                .subscribe(Util.subscriber());
+                .subscribe(Util.subscriber("Emit"));
 
         // emits countries until it emits Canada or it does 10 iterations
         Flux.create(fluxSink -> {
@@ -26,7 +26,7 @@ public class Lec01FluxCreate {
                     } while (!country.equalsIgnoreCase("Canada") && counter < 10);
                     fluxSink.complete();
                 })
-                .subscribe(Util.subscriber());
+                .subscribe(Util.subscriber("EmitUntil"));
 
     }
 

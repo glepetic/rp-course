@@ -37,4 +37,8 @@ public class Util {
         return new DefaultSubscriber<>();
     }
 
+    public static <T> Subscriber<T> subscriber(String name) {
+        return new DefaultSubscriber<>(name);
+    }
+
 }
