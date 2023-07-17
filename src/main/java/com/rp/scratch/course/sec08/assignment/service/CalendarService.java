@@ -1,4 +1,4 @@
-package com.rp.scratch.course.sec08.assignment;
+package com.rp.scratch.course.sec08.assignment.service;
 
 import reactor.core.publisher.Flux;
 
@@ -37,22 +37,5 @@ public class CalendarService {
         int month = plusOne % 12;
         return month == 0 ? 12 : month;
     }
-
-    /*
-    1
-    2
-    3
-    4
-    5
-    6
-    7
-    8
-    9
-    10
-    11
-    12
-    13 (1 = 13 - 12)
-
-     */
 
 }

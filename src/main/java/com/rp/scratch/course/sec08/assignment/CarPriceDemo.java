@@ -1,5 +1,8 @@
 package com.rp.scratch.course.sec08.assignment;
 
+import com.rp.scratch.course.sec08.assignment.model.Brand;
+import com.rp.scratch.course.sec08.assignment.model.Car;
+import com.rp.scratch.course.sec08.assignment.service.CarValueService;
 import com.rp.scratch.util.ScratchUtil;
 
 public class CarPriceDemo {

@@ -1,4 +1,4 @@
-package com.rp.scratch.course.sec08.assignment;
+package com.rp.scratch.course.sec08.assignment.model;
 
 import lombok.Getter;
 

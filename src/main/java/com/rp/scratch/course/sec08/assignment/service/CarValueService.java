@@ -1,5 +1,6 @@
-package com.rp.scratch.course.sec08.assignment;
+package com.rp.scratch.course.sec08.assignment.service;
 
+import com.rp.scratch.course.sec08.assignment.model.Car;
 import reactor.core.publisher.Flux;
 
 import java.util.Objects;
