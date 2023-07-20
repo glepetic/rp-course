@@ -2,6 +2,7 @@ package com.rp.scratch.course.sec09.assignment.processor;
 
 import com.rp.scratch.course.sec09.assignment.model.Order;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 import java.util.Objects;
 
@@ -19,7 +20,11 @@ public class DiscountProcessor implements OrderProcessor {
     @Override
     public Flux<Order> process(Flux<Order> orders) {
         return orders.doOnNext(order -> System.out.println("Applying 2x1 promotion to: " + order))
-                .flatMap(order -> Flux.just(order, new Order("FREE " + order.item(), order.category(), 0)));
+                .flatMap(order -> Flux.concat(Mono.just(order), this.getFreeItem(order)));
+    }
+
+    private Mono<Order> getFreeItem(Order order) {
+        return Mono.fromSupplier(() -> new Order("FREE " + order.item(), order.category(), 0));
     }
 
 }
