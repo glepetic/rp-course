@@ -10,7 +10,7 @@ import java.util.Objects;
 
 public class Reader {
 
-    private static final Path PATH = Paths.get("src/main/resources/assignment/sec03");
+    private static final Path PATH = Paths.get("src/main/resources/scratch/assignment/sec03");
 
     private final BufferedReader reader;
     private boolean open;

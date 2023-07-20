@@ -28,12 +28,12 @@ public class CarValueService {
         return Flux.combineLatest(
                         this.carDemandService.demandFactor(car.brand()).startWith(1d),
                         this.carDepreciationService.getDepreciation(car.brand()),
-                        (demandFactor, devaluation) -> this.calculateRealTimeValue(demandFactor, devaluation, car.price())
+                        (demandFactor, depreciation) -> this.calculateRealTimeValue(demandFactor, depreciation, car.price())
                 );
     }
 
-    private Long calculateRealTimeValue(Double demandFactor, Integer devaluation, Integer carPrice) {
-        return Math.round(Math.max(carPrice * 0.1, demandFactor * (carPrice - devaluation)));
+    private Long calculateRealTimeValue(Double demandFactor, Integer depreciation, Integer carPrice) {
+        return Math.round(Math.max(carPrice * 0.1, demandFactor * (carPrice - depreciation)));
     }
 
 }

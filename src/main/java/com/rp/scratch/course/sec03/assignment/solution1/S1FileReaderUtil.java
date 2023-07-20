@@ -9,7 +9,7 @@ import java.util.Objects;
 
 public class S1FileReaderUtil {
 
-    private static final Path PATH = Paths.get("src/main/resources/assignment/sec03");
+    private static final Path PATH = Paths.get("src/main/resources/scratch/assignment/sec03");
 
     private static S1FileReaderUtil instance = null;
 

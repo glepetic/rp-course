@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public class FileUtil {
 
-    private static final Path PATH = Paths.get("src/main/resources/assignment/sec01");
+    private static final Path PATH = Paths.get("src/main/resources/scratch/assignment/sec01");
 
     private static FileUtil instance = null;
 
