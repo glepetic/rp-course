@@ -15,7 +15,7 @@ public class Lec03Latest {
         // this is why it always gets the last item before completion, in this case 200
 
         // 75% of bufferSize before it fills the buffer, for 16 -> 12
-        System.setProperty("reactor.bufferSize.small", "16");
+        System.setProperty("reactor.bufferSize.small", "16"); // 16 is the minimum value
 
         // items are published faster than they are processed
         Flux.create(fluxSink -> {

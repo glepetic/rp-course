@@ -12,7 +12,7 @@ public class Lec02Drop {
     public static void main(String[] args) {
 
         // 75% of bufferSize before it fills the buffer, for 16 -> 12
-        System.setProperty("reactor.bufferSize.small", "16");
+        System.setProperty("reactor.bufferSize.small", "16"); // 16 is the minimum value
 
         List<Object> list = new ArrayList<>();
 
